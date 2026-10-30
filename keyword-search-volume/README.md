@@ -1,6 +1,6 @@
 # Keyword Search Volume
 
-Google Ads Keyword Planner data for a list of keywords in one location: average monthly searches, month-by-month history, CPC, top-of-page bids, and competition. No Google Ads account.
+Google Ads Keyword Planner data, the same source as Google's own Keyword Planner, for a list of keywords in one location: average monthly searches, month-by-month history, CPC, top-of-page bids, and competition. No Google Ads account.
 
 Actor id: `Xp6yi5EymYGQIrdxw` (`magenta_waterwheel/keyword-search-volume`).
 
@@ -14,7 +14,7 @@ Pay per event, from the [Store listing](https://apify.com/magenta_waterwheel/key
 
 - $1.50 per 1,000 keywords that come back with data ($0.0015 each)
 - $0.12 per lookup of up to 1,000 keywords
-- $0.00005 to start the run
+- $0.00005 per GB of memory to start the run (minimum 1 GB)
 
 Keywords with no data, invalid keywords, and duplicates are free. The sample input is one lookup and two keywords, about $0.12 if both have data. A paid Apify plan is required. On the Free plan the run stops immediately and is not charged.
 
@@ -64,7 +64,7 @@ One dataset item per keyword. This is the shape from the Actor README, shortened
 }
 ```
 
-A keyword Google has no data for has `"hasData": false`. `competition` is `LOW`, `MEDIUM`, or `HIGH`. `monthlySearches` is newest first. `trend3mPct` is the last three months against the three before that. `trendYoYPct` is the latest month against the same month a year earlier.
+A keyword the planner has no data for has `"hasData": false`. `competition` is `LOW`, `MEDIUM`, or `HIGH`. `monthlySearches` is newest first. `trend3mPct` is the last three months against the three before that. `trendYoYPct` is the latest month against the same month a year earlier.
 
 Invalid and duplicate keywords are listed on the `RUN_SUMMARY` record in the run's key-value store. This endpoint returns dataset items only, so that record is not in the response.
 

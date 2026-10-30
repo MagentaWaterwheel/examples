@@ -14,7 +14,7 @@ Pay per event, from the [Store listing](https://apify.com/magenta_waterwheel/app
 
 - $0.25 per 1,000 reviews saved ($0.00025 each)
 - $2.00 per 1,000 app-details records ($0.002 each), one record per app per country
-- $0.00005 to start the run
+- $0.00005 per GB of memory to start the run (minimum 1 GB)
 
 Reviews filtered out by star rating or date are free. The sample input is one app, one country, and at most 10 reviews: about $0.005, including the app record.
 

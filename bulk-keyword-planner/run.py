@@ -22,12 +22,12 @@ def main() -> None:
     run_input = json.loads(Path(__file__).with_name("input.json").read_text())
     # max_retries=0 so a timeout does not start a second paid run.
     client = ApifyClient(token, max_retries=0)
-    # Holds the connection open until the run finishes. Apify closes it after 300 seconds.
+    # timeout covers the sync endpoint, which can take the full 300 seconds.
     response = client.http_client.call(
         method="POST",
         url=URL,
         json=run_input,
-        timeout=timedelta(seconds=300),
+        timeout=timedelta(seconds=360),
     )
     json.dump(response.json(), sys.stdout, indent=2)
     sys.stdout.write("\n")

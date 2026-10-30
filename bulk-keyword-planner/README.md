@@ -1,6 +1,6 @@
 # Bulk Keyword Planner
 
-The same Google Keyword Planner fields as [Keyword Search Volume](../keyword-search-volume/), billed as a flat fee per batch of up to 1,000 keywords. Paste keywords, pass a list, or point at a CSV, and look them up in one or many locations. No Google Ads account.
+Google Ads Keyword Planner data, the same source as Google's own Keyword Planner. The same fields as [Keyword Search Volume](../keyword-search-volume/), billed as a flat fee per batch of up to 1,000 keywords. Paste keywords, pass a list, or point at a CSV, and look them up in one or many locations. No Google Ads account.
 
 Use Keyword Search Volume for a short list. This Actor charges a full batch even when the list is two keywords.
 
@@ -16,7 +16,7 @@ Pay per event, from the [Store listing](https://apify.com/magenta_waterwheel/bul
 
 - $0.19 per batch of up to 1,000 keywords in one location, charged after data comes back
 - no per-keyword fee
-- $0.00005 to start the run
+- $0.00005 per GB of memory to start the run (minimum 1 GB)
 
 Keywords with no data cost nothing extra. 1,000 keywords in one country is one batch ($0.19). 5,000 keywords in three countries is 15 batches ($2.85). A paid Apify plan is required.
 
@@ -36,7 +36,7 @@ The sample input is one location and two keywords, so it is one batch: $0.19.
 
 `csvUrl` is a public CSV or TSV. It reads the column named `keyword`, `keywords`, `query`, or `term`, or the column in `csvColumn`, otherwise the first column. Each location is a separate lookup. `includeCpcCompetition` and `includeMonthlySearches` default to on. `dateFrom` and `dateTo` (`2024-01`) set the monthly history window, up to four years back.
 
-Keywords Google Ads would reject (longer than 80 characters or 10 words, or containing `! @ % , ( )` or emoji) are skipped and listed in the run summary.
+Keywords the planner can't return data for (longer than 80 characters or 10 words, or containing `! @ % , ( )` or emoji) are skipped and listed in the run summary.
 
 ## Output
 
@@ -67,7 +67,7 @@ One dataset item per keyword per location. The dataset schema uses the same fiel
 }
 ```
 
-`competition` is `LOW`, `MEDIUM`, or `HIGH`. `"hasData": false` means Google had no data for that keyword in that location.
+`competition` is `LOW`, `MEDIUM`, or `HIGH`. `"hasData": false` means the planner had no data for that keyword in that location.
 
 Counts, skipped keywords, and batches are on the `RUN_SUMMARY` record in the run's key-value store. This endpoint returns dataset items only.
 

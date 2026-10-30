@@ -15,7 +15,7 @@ Pay per answer (one prompt on one engine), from the [Store listing](https://apif
 - Perplexity: $0.04
 - Gemini: $0.08
 - ChatGPT: $0.18
-- $0.00005 to start the run
+- $0.00005 per GB of memory to start the run (minimum 1 GB)
 
 Failed answers, skipped engines, and duplicate prompts are free. If `engines` is empty, Perplexity and Gemini are used. The sample input is one Perplexity answer: $0.04. A paid Apify plan is required.
 

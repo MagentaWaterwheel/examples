@@ -14,7 +14,7 @@ Pay per event, from the [Store listing](https://apify.com/magenta_waterwheel/goo
 
 - $0.02 per Google AI Overviews check. Charged even when Google shows no overview, because the search still runs. The item then has `aiAnswerPresent: false`.
 - $0.03 per Google AI Mode answer
-- $0.00005 to start the run
+- $0.00005 per GB of memory to start the run (minimum 1 GB)
 
 Failed checks and duplicate prompts are free. The sample input is one prompt on AI Overviews only, so $0.02. The Free plan can run up to 10 checks per run.
 

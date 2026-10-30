@@ -14,7 +14,7 @@ Pay per event, from the [Store listing](https://apify.com/magenta_waterwheel/doc
 
 - $3.00 per 1,000 extracted pages ($0.003 each). A page is a text PDF page, a slide, or a 3,000-character section of another format.
 - $8.00 per 1,000 OCR pages ($0.008 each). An OCR page is charged only at the OCR price.
-- $0.00005 to start the run
+- $0.00005 per GB of memory to start the run (minimum 1 GB)
 
 Blank pages, failed downloads, unsupported files, and documents with no extractable text are free. The sample input caps the file at 2 pages, about $0.006 if both extract as text.
 
@@ -82,7 +82,7 @@ One item per document when `outputMode` is `document`. This is the Actor README'
 
 `format` is `pdf`, `docx`, `pptx`, `xlsx`, `csv`, `html`, `text`, `markdown`, or `image`. `status` is `success` or `error`. An error item has `error` set (for example `Download failed with HTTP 404.`) and is not charged.
 
-With `outputMode` set to `page`, each page is its own item. The page Markdown is in `markdown`, and the item also has `pageNumber`, `isOcr`, `pageTableCount`, and `pageWordCount`. The `pages` array is document mode only.
+With `outputMode` set to `page`, each page is its own item. The page Markdown is in `markdown`, and the item has `pageNumber`, `isOcr`, `pageWordCount`, and `pageTableCount`. The `pages` array in the example is document mode only. Each object in it uses `wordCount` and `tableCount`, which are the document-mode names for those counts.
 
 A `RUN_SUMMARY` record in the key-value store lists failures and charged pages. This endpoint returns dataset items only.
 
