@@ -1,0 +1,8 @@
+{
+  "prompts": ["What is the best project management software for small teams?"],
+  "engines": ["perplexity"],
+  "brand": "Trello",
+  "domain": "trello.com",
+  "competitors": ["Asana", "ClickUp"],
+  "country": "US"
+}
