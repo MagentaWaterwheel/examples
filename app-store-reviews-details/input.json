@@ -1,0 +1,8 @@
+{
+  "apps": [
+    "https://apps.apple.com/us/app/duolingo-language-lessons/id570060128"
+  ],
+  "countries": ["us"],
+  "maxReviewsPerCountry": 10,
+  "sortBy": "mostrecent"
+}

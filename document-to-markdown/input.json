@@ -1,0 +1,10 @@
+{
+  "startUrls": [
+    {
+      "url": "https://arxiv.org/pdf/1706.03762"
+    }
+  ],
+  "maxPagesPerDocument": 2,
+  "ocrMode": "auto",
+  "outputMode": "document"
+}

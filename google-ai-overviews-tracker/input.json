@@ -1,0 +1,8 @@
+{
+  "prompts": ["best crm for small business"],
+  "engines": ["google_aio"],
+  "brand": "HubSpot",
+  "domain": "hubspot.com",
+  "competitors": ["Salesforce", "Zoho"],
+  "country": "US"
+}
